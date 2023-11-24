@@ -2,7 +2,7 @@
 
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/footer";
 import { Typography } from "@mui/material";
 /**
@@ -47,12 +47,14 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
               </Typography>
               <Typography variant="subtitle2" className={classes.child}>
                 {" "}
-                <PrismicRichText field={slice.primary.message} />
+                {slice.primary.message}
               </Typography>
             </div>
           </div>
         </div>
-        <PrismicRichText field={slice.primary.copyright} />
+        <Typography variant="subtitle2" className={classes.child}>
+          {slice.primary.copy_right}
+        </Typography>
       </div>
     </section>
   );

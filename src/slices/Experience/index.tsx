@@ -1,7 +1,7 @@
 "use client";
 
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/experiemce";
 import { Typography } from "@mui/material";
 

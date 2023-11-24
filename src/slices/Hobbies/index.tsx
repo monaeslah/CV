@@ -1,7 +1,7 @@
 "use client";
 
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/hobbies";
 import { Typography } from "@mui/material";
 import { PrismicNextImage } from "@prismicio/next";
@@ -29,15 +29,15 @@ const Hobbies = ({ slice }: HobbiesProps): JSX.Element => {
         <div className={classes.aboutContainer}>
           {slice.items.map((item: any, index: any) => (
             <div className={classes.aboutItems} key={index}>
+              <div className={classes.aboutImageBlock}>
+                <PrismicNextImage
+                  field={item.icon}
+                  className={classes.aboutImage}
+                  alt=""
+                />
+              </div>
               <Typography variant="subtitle1" className={classes.aboutItem}>
-                <div className={classes.aboutImageBlock}>
-                  <PrismicNextImage
-                    field={item.icon}
-                    className={classes.aboutImage}
-                    alt=""
-                  />
-                </div>
-                <PrismicRichText field={item.title} />
+                {item.label}
               </Typography>
             </div>
           ))}

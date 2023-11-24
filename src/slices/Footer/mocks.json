@@ -30,15 +30,9 @@
 				"type": "Text"
 			},
 			"message": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Cillum mollit aute ullamco elit nulla ullamco cupidatat consectetur magna quis."
-						}
-					}
-				]
+				"__TYPE__": "FieldContent",
+				"value": "jump",
+				"type": "Text"
 			},
 			"copy_right": {
 				"__TYPE__": "FieldContent",

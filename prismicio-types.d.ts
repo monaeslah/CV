@@ -432,12 +432,12 @@ export interface FooterSliceDefaultPrimary {
   /**
    * Message field in *Footer → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: footer.primary.message
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  message: prismic.RichTextField;
+  message: prismic.KeyTextField;
 }
 
 /**
@@ -617,6 +617,16 @@ export interface HobbiesSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * label field in *Hobbies → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hobbies.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
 }
 
 /**
@@ -654,34 +664,14 @@ export type HobbiesSlice = prismic.SharedSlice<
  */
 export interface IntroductionSliceDefaultPrimary {
   /**
-   * Title field in *Introduction → Primary*
+   * title field in *Introduction → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: introduction.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.RichTextField;
-
-  /**
-   * Description field in *Introduction → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: introduction.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * Avatar field in *Introduction → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: introduction.primary.avatar
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  avatar: prismic.ImageField<never>;
+  title: prismic.KeyTextField;
 
   /**
    * SubTitle field in *Introduction → Primary*
@@ -692,6 +682,26 @@ export interface IntroductionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   subtitle: prismic.KeyTextField;
+
+  /**
+   * Description field in *Introduction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: introduction.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Avatar field in *Introduction → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: introduction.primary.avatar
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  avatar: prismic.ImageField<never>;
 }
 
 /**

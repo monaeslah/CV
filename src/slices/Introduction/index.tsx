@@ -1,6 +1,6 @@
 "use client";
 import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/introduction";
 import { Typography } from "@mui/material";
 import { PrismicNextImage } from "@prismicio/next";
@@ -25,7 +25,7 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
       <div className={classes.introductionBlock}>
         <div className={classes.introductionContents}>
           <Typography variant="h3" className={classes.tagline}>
-            <PrismicRichText field={slice.primary.title} />
+            {slice.primary.title}
           </Typography>
           <Typography
             variant="body1"
@@ -36,7 +36,7 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
           </Typography>
           <div className={classes.introductionItem}>
             <Typography variant="body2" className={classes.signUp}>
-              <PrismicRichText field={slice.primary.description} />
+              {slice.primary.description}
             </Typography>
           </div>
         </div>

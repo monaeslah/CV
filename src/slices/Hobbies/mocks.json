@@ -52,6 +52,14 @@
 								}
 							]
 						}
+					],
+					[
+						"label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "bow",
+							"type": "Text"
+						}
 					]
 				]
 			}
