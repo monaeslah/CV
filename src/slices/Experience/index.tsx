@@ -25,22 +25,24 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
           {slice.primary.title}
         </Typography>
         <div className={classes.featuresList}>
-          {slice.items.map((item: any, index: any) => (
-            <div className={classes.featureContainer} key={index}>
-              <Typography variant="h2" className={classes.title}>
-                <>{item.title}</>
-              </Typography>
-              <Typography variant="subtitle1" className={classes.SubTitle}>
-                {item.date}
-              </Typography>
-              <Typography
-                variant="body1"
-                className={classes.featureItemsDescription}
-              >
-                {item.description}
-              </Typography>
-            </div>
-          ))}
+          {slice.items.map((item: any, index: any) => {
+            return (
+              <div className={classes.featureContainer} key={index}>
+                <Typography variant="h2" className={classes.title}>
+                  <>{item.title}</>
+                </Typography>
+                <Typography variant="subtitle1" className={classes.SubTitle}>
+                  {item.date}
+                </Typography>
+                <Typography
+                  variant="body1"
+                  className={classes.featureItemsDescription}
+                >
+                  {item.description}
+                </Typography>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

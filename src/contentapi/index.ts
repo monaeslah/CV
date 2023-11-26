@@ -15,21 +15,23 @@ import Footer from '@/slices/Footer';
 export const components = {
     header: Header,
     introduction:Introduction,
-experience:Experience,
+    experience:Experience,
     education:Education,
     hobbies:Hobbies,
     footer:Footer
     
    
   }
-export async function generateStaticParams() {
-    const client = createClient();
+
+  export const generateStaticParams = async () => {
+    const client = createClient({});
   
     /**
      * Query all Documents from the API, except the homepage.
      */
     const pages = await client.getByUID("page", 'home');
     const header = await client.getByUID("header", 'header');
+  
     const footer = await client.getByUID("footer", 'footer');
    
     // Log the fetched pages for debugging
@@ -50,3 +52,27 @@ export async function generateStaticParams() {
 //         prismic.filter.not("my.page.uid", "header"),
 //       ],
 //     }
+
+export const getExtraPageContent = async (uid: string) => {
+  const client = createClient({})
+
+  const header = await client.getByUID('header', 'header')
+  const footer = await client.getByUID('footer', 'footer')
+  try {
+    const page = await client.getByUID('extra_page', uid)
+
+    return {
+      content: page.data ,
+   
+      header,
+      footer
+    }
+  } catch (e) {
+    return {
+      content: '',
+      
+      header,
+      footer
+    }
+  }
+}

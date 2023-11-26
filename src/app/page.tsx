@@ -3,10 +3,11 @@ import { Metadata } from "next";
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
 
-import { createClient } from "@/prismicio";
+import dynamic from "next/dynamic";
 
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+// import { ThemeProvider } from "@mui/material/styles";
+// import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from "../generalAssets/Themes/Theme";
 import { components } from "@/slices";
 import Header from "../slices/Header";
@@ -21,14 +22,12 @@ import Footer from "@/slices/Footer";
  * Use the SliceZone to render the content of the page.
  */
 
-export default async function Index() {
-  const { props, header, footer } = await generateStaticParams();
+async function Home({}) {
+  const { header, footer, props } = await generateStaticParams();
 
   /**
    * The client queries content from the Prismic API
    */
-  const client = createClient();
-  const home = await client.getByUID("page", "home");
 
   return (
     <ThemeProvider theme={theme}>
@@ -39,7 +38,7 @@ export default async function Index() {
         slices={[]}
         context={undefined}
       />
-      <SliceZone slices={home.data.slices} components={components} />
+      <SliceZone slices={props.slices} components={components} />
       <Footer
         slice={footer.data.slices[0] as FooterSlice}
         index={0}
@@ -49,3 +48,6 @@ export default async function Index() {
     </ThemeProvider>
   );
 }
+export default dynamic(() => Promise.resolve(Home), {
+  ssr: false,
+});

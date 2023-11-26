@@ -10,20 +10,15 @@ import { components } from "@/slices";
 import Header from "../../slices/Header";
 import { generateStaticParams } from "@/contentapi";
 import { HeaderSlice } from "../../../prismicio-types";
+import dynamic from "next/dynamic";
 
 type Params = { uid: string };
 
 /**
  * This page renders a Prismic Document dynamically based on the URL.
  */
-
-export default async function Page({ params }: { params: Params }) {
+async function Page({ params }: { params: Params }) {
   const { props, header } = await generateStaticParams();
-  const client = createClient();
-  const page = await client
-    .getByUID("page", params.uid)
-    .catch(() => notFound());
-  console.log("header", props);
 
   return (
     <>
@@ -37,3 +32,6 @@ export default async function Page({ params }: { params: Params }) {
     </>
   );
 }
+export default dynamic(() => Promise.resolve(Page), {
+  ssr: false,
+});

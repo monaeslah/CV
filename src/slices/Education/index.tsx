@@ -27,30 +27,32 @@ const Education = ({ slice }: EducationProps): JSX.Element => {
             </Typography>
           </div>
           <div className={classes.educationContainer}>
-            {slice.items.map((item, index) => (
-              <div className={classes.productContent} key={index}>
-                <div className={classes.cards}>
-                  <div>
-                    <Typography variant="h2" className={classes.titleColor}>
-                      {item.title}
-                    </Typography>
+            {slice.items.map((item, index) => {
+              return (
+                <div className={classes.productContent} key={index}>
+                  <div className={classes.cards}>
+                    <div>
+                      <Typography variant="h2" className={classes.titleColor}>
+                        {item.title}
+                      </Typography>
+                    </div>
+                    <div>
+                      {" "}
+                      <Typography variant="h6" className={classes.titleColor}>
+                        {item.date}
+                      </Typography>
+                    </div>
                   </div>
-                  <div>
-                    {" "}
-                    <Typography variant="h6" className={classes.titleColor}>
-                      {item.date}
-                    </Typography>
-                  </div>
-                </div>
 
-                <Typography
-                  variant="subtitle1"
-                  className={classes.descriptionColor}
-                >
-                  {item.description}
-                </Typography>
-              </div>
-            ))}
+                  <Typography
+                    variant="subtitle1"
+                    className={classes.descriptionColor}
+                  >
+                    {item.description}
+                  </Typography>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

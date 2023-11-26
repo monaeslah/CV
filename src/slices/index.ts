@@ -4,10 +4,10 @@ import dynamic from "next/dynamic";
 
 export const components = {
   education: dynamic(() => import("./Education")),
+  error: dynamic(() => import("./Error")),
   experience: dynamic(() => import("./Experience")),
   footer: dynamic(() => import("./Footer")),
   header: dynamic(() => import("./Header")),
   hobbies: dynamic(() => import("./Hobbies")),
   introduction: dynamic(() => import("./Introduction")),
-  rich_text: dynamic(() => import("./RichText")),
 };

@@ -27,20 +27,22 @@ const Hobbies = ({ slice }: HobbiesProps): JSX.Element => {
         </Typography>
 
         <div className={classes.aboutContainer}>
-          {slice.items.map((item: any, index: any) => (
-            <div className={classes.aboutItems} key={index}>
-              <div className={classes.aboutImageBlock}>
-                <PrismicNextImage
-                  field={item.icon}
-                  className={classes.aboutImage}
-                  alt=""
-                />
+          {slice.items.map((item, index) => {
+            return (
+              <div className={classes.aboutItems} key={index}>
+                <div className={classes.aboutImageBlock}>
+                  <PrismicNextImage
+                    field={item.icon}
+                    className={classes.aboutImage}
+                    alt=""
+                  />
+                </div>
+                <Typography variant="subtitle1" className={classes.aboutItem}>
+                  {item.label}
+                </Typography>
               </div>
-              <Typography variant="subtitle1" className={classes.aboutItem}>
-                {item.label}
-              </Typography>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

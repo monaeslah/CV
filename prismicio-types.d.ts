@@ -4,6 +4,71 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type ExtraPageDocumentDataSlicesSlice = ErrorSlice;
+
+/**
+ * Content for extra_page documents
+ */
+interface ExtraPageDocumentData {
+  /**
+   * Slice Zone field in *extra_page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: extra_page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ExtraPageDocumentDataSlicesSlice> /**
+   * Meta Description field in *extra_page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: extra_page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *extra_page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: extra_page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *extra_page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: extra_page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * extra_page document from Prismic
+ *
+ * - **API ID**: `extra_page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ExtraPageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ExtraPageDocumentData>,
+    "extra_page",
+    Lang
+  >;
+
 type FooterDocumentDataSlicesSlice = FooterSlice;
 
 /**
@@ -57,7 +122,7 @@ interface FooterDocumentData {
  * Footer document from Prismic
  *
  * - **API ID**: `footer`
- * - **Repeatable**: `true`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -71,17 +136,6 @@ type HeaderDocumentDataSlicesSlice = HeaderSlice;
  * Content for Header documents
  */
 interface HeaderDocumentData {
-  /**
-   * Title field in *Header*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: header.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
   /**
    * Slice Zone field in *Header*
    *
@@ -129,7 +183,7 @@ interface HeaderDocumentData {
  * Header document from Prismic
  *
  * - **API ID**: `header`
- * - **Repeatable**: `true`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
@@ -213,7 +267,11 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = FooterDocument | HeaderDocument | PageDocument;
+export type AllDocumentTypes =
+  | ExtraPageDocument
+  | FooterDocument
+  | HeaderDocument
+  | PageDocument;
 
 /**
  * Primary content in *Education → Primary*
@@ -294,6 +352,33 @@ export type EducationSlice = prismic.SharedSlice<
   "education",
   EducationSliceVariation
 >;
+
+/**
+ * Default variation for Error Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ErrorSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Error*
+ */
+type ErrorSliceVariation = ErrorSliceDefault;
+
+/**
+ * Error Shared Slice
+ *
+ * - **API ID**: `error`
+ * - **Description**: Error
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ErrorSlice = prismic.SharedSlice<"error", ErrorSliceVariation>;
 
 /**
  * Primary content in *Experience → Primary*
@@ -734,76 +819,6 @@ export type IntroductionSlice = prismic.SharedSlice<
   IntroductionSliceVariation
 >;
 
-/**
- * Primary content in *RichText → Primary*
- */
-export interface RichTextSliceDefaultPrimary {
-  /**
-   * Content field in *RichText → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Title field in *RichText → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-}
-
-/**
- * Primary content in *RichText → Items*
- */
-export interface RichTextSliceDefaultItem {
-  /**
-   * slide field in *RichText → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: rich_text.items[].slide
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  slide: prismic.ImageField<never>;
-}
-
-/**
- * Default variation for RichText Slice
- *
- * - **API ID**: `default`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<RichTextSliceDefaultPrimary>,
-  Simplify<RichTextSliceDefaultItem>
->;
-
-/**
- * Slice variation for *RichText*
- */
-type RichTextSliceVariation = RichTextSliceDefault;
-
-/**
- * RichText Shared Slice
- *
- * - **API ID**: `rich_text`
- * - **Description**: RichText
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type RichTextSlice = prismic.SharedSlice<
-  "rich_text",
-  RichTextSliceVariation
->;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -814,6 +829,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      ExtraPageDocument,
+      ExtraPageDocumentData,
+      ExtraPageDocumentDataSlicesSlice,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
@@ -829,6 +847,9 @@ declare module "@prismicio/client" {
       EducationSliceDefaultItem,
       EducationSliceVariation,
       EducationSliceDefault,
+      ErrorSlice,
+      ErrorSliceVariation,
+      ErrorSliceDefault,
       ExperienceSlice,
       ExperienceSliceDefaultPrimary,
       ExperienceSliceDefaultItem,
@@ -853,11 +874,6 @@ declare module "@prismicio/client" {
       IntroductionSliceDefaultPrimary,
       IntroductionSliceVariation,
       IntroductionSliceDefault,
-      RichTextSlice,
-      RichTextSliceDefaultPrimary,
-      RichTextSliceDefaultItem,
-      RichTextSliceVariation,
-      RichTextSliceDefault,
     };
   }
 }

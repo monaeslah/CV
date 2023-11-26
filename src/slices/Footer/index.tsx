@@ -25,13 +25,15 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
         <div className={classes.footerContent}>
           <div className={classes.logoBlock}>
             <div className={classes.socialMediaContainer}>
-              {slice.items.map((item: any, index: any) => (
-                <div className={classes.socialMediaIcon} key={index}>
-                  <PrismicNextLink field={item.link}>
-                    <PrismicNextImage field={item.icon} alt="" />
-                  </PrismicNextLink>
-                </div>
-              ))}
+              {slice.items.map((item, index) => {
+                return (
+                  <div className={classes.socialMediaIcon} key={index}>
+                    <PrismicNextLink field={item.link}>
+                      <PrismicNextImage field={item.icon} alt="" />
+                    </PrismicNextLink>
+                  </div>
+                );
+              })}
             </div>
           </div>
           <div className={classes.info}>
