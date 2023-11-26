@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"copyright": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Mollit veniam dolor ipsum officia adipisicing."
-						}
-					}
-				]
-			},
 			"title": {
 				"__TYPE__": "FieldContent",
 				"value": "tears",

@@ -475,16 +475,6 @@ export interface FooterSliceDefaultPrimary {
   copy_right: prismic.KeyTextField;
 
   /**
-   * CopyRight field in *Footer → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.copyright
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  copyright: prismic.RichTextField;
-
-  /**
    * Title field in *Footer → Primary*
    *
    * - **Field Type**: Text

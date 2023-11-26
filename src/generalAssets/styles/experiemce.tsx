@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme?: any) => ({
     textAlign: "center",
   },
   SubTitle: {
-    color: theme.palette.primary[400],
+    color: theme.palette.primary[200],
     textAlign: "center",
     maxWidth: "900px",
   },

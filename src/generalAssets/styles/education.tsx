@@ -21,7 +21,9 @@ const useStyles = makeStyles((theme?: any) => ({
     alignItems: "center",
     gap: "106px",
     borderRadius: "30px",
-    background: "#F8F8FF",
+    background: " #59a9b6",
+    // background: "#e1f3f7",
+
     fontFamily: "'Roboto', sans-serif",
     textAlign: "center",
 
@@ -49,12 +51,13 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   titleColor: {
-    color: theme.palette.primary[100],
+    color: theme.palette.primary[600],
     lineHeight: "26px!important",
   },
   descriptionColor: {
     maxWidth: "950px",
-    color: theme.palette.primary[400],
+    color: "#e1f3f7",
+    // color: "#18292f",#e1f3f7
     paddingBottom: "16px",
   },
   productsGroup: {

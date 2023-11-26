@@ -5,6 +5,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/footer";
 import { Typography } from "@mui/material";
+import Input from "@/app/components/Input";
 /**
  * Props for `Footer`.
  */
@@ -21,42 +22,46 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={classes.background}
     >
-      <div className={classes.footerBlock}>
-        <div className={classes.footerContent}>
-          <div className={classes.logoBlock}>
-            <div className={classes.socialMediaContainer}>
-              {slice.items.map((item, index) => {
-                return (
-                  <div className={classes.socialMediaIcon} key={index}>
-                    <PrismicNextLink field={item.link}>
-                      <PrismicNextImage field={item.icon} alt="" />
-                    </PrismicNextLink>
-                  </div>
-                );
-              })}
-            </div>
+      {" "}
+      <div className={classes.footerContent}>
+        <div className={classes.footerBlock}>
+          <div className={classes.socialMediaContainer}>
+            {slice.items.map((item, index) => {
+              return (
+                <div className={classes.socialMediaIcon} key={index}>
+                  <PrismicNextLink field={item.link}>
+                    <PrismicNextImage field={item.icon} alt="" />
+                  </PrismicNextLink>
+                </div>
+              );
+            })}
           </div>
-          <div className={classes.info}>
-            <div className={classes.footerAttribute}>
-              <Typography variant="h5" className={classes.title}>
+          <Typography variant="subtitle2" className={classes.child}>
+            {" "}
+            {slice.primary.message}
+          </Typography>
+        </div>
+        {/* <div className={classes.info}>
+          <div className={classes.footerAttribute}> */}
+        {/* <Typography variant="h5" className={classes.title}>
                 {slice.primary.title}
               </Typography>
               <Typography variant="subtitle2" className={classes.child}>
                 {slice.primary.full_name}
               </Typography>
-              <Typography variant="subtitle2" className={classes.child}>
-                {slice.primary.email}
-              </Typography>
-              <Typography variant="subtitle2" className={classes.child}>
-                {" "}
-                {slice.primary.message}
-              </Typography>
-            </div>
-          </div>
+              <Input />
+          
+              <Input /> */}
+        {/* </div>
+        </div> */}
+        <div className={classes.footerBlock}>
+          <Typography variant="subtitle2" className={classes.child}>
+            {slice.primary.email}
+          </Typography>
+          <Typography variant="subtitle2" className={classes.child}>
+            {slice.primary.copy_right}
+          </Typography>
         </div>
-        <Typography variant="subtitle2" className={classes.child}>
-          {slice.primary.copy_right}
-        </Typography>
       </div>
     </section>
   );

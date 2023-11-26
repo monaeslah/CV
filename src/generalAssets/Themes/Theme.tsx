@@ -10,11 +10,11 @@ function customBorderTransform(value: any) {
 const mainPalette = {
   main: "#291640",
   50: "#291640",
-  100: "#151680",
-  200: "#444599",
-  400: "#6263AA",
-  500: "#7879C8",
-  600: "#8788C8",
+  100: "#44828f",
+  200: "#70bdc2",
+  400: "#68a3a8",
+  500: "#d5eeef",
+  600: "#e1f3f7",
   700: "#9B9CD0",
   800: "#B1B3E0",
   900: "#E1E0FF",
@@ -33,6 +33,15 @@ const secondPalette = {
   800: "#C1C1FF",
   900: "#E1E0FF",
   A100: "#F2EFFF",
+};
+const info = {
+  main: "#1B1B23",
+  10: "#84838A",
+  20: "#ACAAB4",
+  30: "#EBEAEE",
+  40: "#FFFFFF",
+  50: "rgba(0, 0, 0, 0.08)",
+  60: "rgba(8, 20, 30, 0.38)",
 };
 export const theme = createTheme({
   spacing: [0, 2, 4, 8, 12, 16, 24, 32, 48, 56, 64, 96, 128, 160, 256, 296],
@@ -53,7 +62,7 @@ export const theme = createTheme({
 
   palette: {
     common: {
-      black: "#000",
+      black: "#08141E",
       // inputLabel: '#626782',
     },
     primary: {
@@ -62,7 +71,9 @@ export const theme = createTheme({
     secondary: {
       ...secondPalette,
     },
-
+    info: {
+      ...info,
+    },
     error: {
       main: "#FF365E",
       contrastText: "#FFFFFF",
@@ -86,7 +97,7 @@ export const theme = createTheme({
     },
     text: {
       primary: "#FFFFFF",
-      secondary: "#08141E",
+      secondary: "rgba(8, 20, 30, 0.6)",
     },
   },
 
@@ -201,7 +212,6 @@ export const theme = createTheme({
     },
     borderColor: {
       themeKey: "palette",
-      // Replace with the desired color for borderColor
     },
   },
   shadows: [
