@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme?: any) => ({
     borderRadius: "20px",
     marginBottom: "16px",
     [theme.breakpoints.down("md")]: {
-      background: "#F8F8FF",
+      background: theme.palette.primary[50],
       width: "340px",
       marginBottom: "40px",
     },
@@ -109,7 +109,7 @@ const useStyles = makeStyles((theme?: any) => ({
       height: "auto",
       alignItems: "center",
       borderRadius: "10px",
-      background: "#F8F8FF",
+      background: theme.palette.primary[50],
       marginBottom: "0px",
     },
   },
