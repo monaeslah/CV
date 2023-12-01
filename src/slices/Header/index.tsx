@@ -1,6 +1,6 @@
 "use client";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 import useStyles from "../../generalAssets/styles/header";
@@ -33,14 +33,13 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
         <div className={classes.headerItems}>
           {slice.items.map((item, index) => {
             return (
-              <Typography
-                variant="subtitle1"
-                className={classes.headerItem}
-                key={index}
-              >
+              <PrismicNextLink field={item.link} key={index}>
                 {" "}
-                {item.label}
-              </Typography>
+                <Typography variant="subtitle1" className={classes.headerItem}>
+                  {" "}
+                  {item.label}
+                </Typography>
+              </PrismicNextLink>
             );
           })}
         </div>
