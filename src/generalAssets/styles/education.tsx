@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme?: any) => ({
     alignItems: "center",
     gap: "106px",
     borderRadius: "30px",
-    background: " #59a9b6",
+    background: theme.palette.primary[700],
     // background: "#e1f3f7",
 
     fontFamily: "'Roboto', sans-serif",
@@ -56,8 +56,8 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   descriptionColor: {
     maxWidth: "950px",
-    color: "#e1f3f7",
-    // color: "#18292f",#e1f3f7
+    color: theme.palette.primary[600],
+    // color: "#18292f",
     paddingBottom: "16px",
   },
   productsGroup: {

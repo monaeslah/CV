@@ -9,13 +9,13 @@ function customBorderTransform(value: any) {
 }
 const mainPalette = {
   main: "#291640",
-  50: "#291640",
+  50: "#F8F8FF",
   100: "#44828f",
   200: "#70bdc2",
   400: "#68a3a8",
   500: "#d5eeef",
   600: "#e1f3f7",
-  700: "#9B9CD0",
+  700: "#59a9b6",
   800: "#B1B3E0",
   900: "#E1E0FF",
   A100: "#F8F8FF",
