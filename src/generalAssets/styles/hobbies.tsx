@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme?: any) => {
       margin: "0 auto 80px auto",
       maxWidth: "100%",
     },
-    aboutBlock: {
+    hobbieBlock: {
       display: "flex",
       flexDirection: "column",
       alignItems: "flex-start",
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme?: any) => {
         },
       },
     },
-    aboutContainer: {
+    hobbieContainer: {
       display: "flex",
       width: "100%",
       justifyContent: "space-between",
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme?: any) => {
         textAlign: "center",
       },
     },
-    aboutItems: {
+    hobbieItems: {
       width: "88%",
       display: "flex",
       flexDirection: "column",
@@ -57,10 +57,10 @@ const useStyles = makeStyles((theme?: any) => {
       gap: "120px",
       [theme.breakpoints.down("sm")]: {},
     },
-    aboutItem: {
+    hobbieItem: {
       color: theme.palette.primary[400],
     },
-    aboutImageBlock: {
+    hobbieImageBlock: {
       //   margin: "auto 0",
       width: "65px",
       height: "65px",
@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme?: any) => {
         margin: "auto",
       },
     },
-    aboutImage: {
+    hobbieImage: {
       margin: "auto",
       width: "80%",
       height: "100%",

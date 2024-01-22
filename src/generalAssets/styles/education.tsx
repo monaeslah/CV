@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 
-  productBlock: {
+  educationBlock: {
     width: "864px",
     maxWidth: " 100%",
     margin: "auto",
@@ -28,18 +28,25 @@ const useStyles = makeStyles((theme?: any) => ({
     textAlign: "center",
 
     [theme.breakpoints.down("md")]: {
-      minHeight: "1440px",
+      background: theme.palette.primary[800],
+
+      minHeight: "640px",
       padding: "20px",
-      marginBottom: "100px",
+      margin: "50px auto",
       gap: "20px",
-      maxWidth: "345px",
+      maxWidth: "405px",
       width: "100%",
     },
   },
-  productContent: {
+  educationContent: {
     display: "flex",
     flexDirection: "column",
     gap: "16px",
+    [theme.breakpoints.down("md")]: {
+      background: theme.palette.primary[700],
+      borderRadius: "30px",
+      padding: "20px",
+    },
   },
   moreContent: {
     display: "block",
@@ -48,6 +55,12 @@ const useStyles = makeStyles((theme?: any) => ({
       color: theme.palette.primary[100],
       marginBottom: "20px",
       paddingLeft: "20px",
+    },
+  },
+  title: {
+    color: theme.palette.primary[800],
+    [theme.breakpoints.down("md")]: {
+      color: theme.palette.primary[800],
     },
   },
   titleColor: {
@@ -60,7 +73,7 @@ const useStyles = makeStyles((theme?: any) => ({
     // color: "#18292f",
     paddingBottom: "16px",
   },
-  productsGroup: {
+  educationsGroup: {
     position: "relative",
     minHeight: "855px",
     display: "flex",
@@ -78,7 +91,7 @@ const useStyles = makeStyles((theme?: any) => ({
     width: "90%",
     gap: "50px",
     [theme.breakpoints.down("md")]: {
-      width: "153px",
+      width: "270px",
       height: "153px",
       margin: "0px",
       position: "initial",
@@ -86,16 +99,16 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 
-  productLists: {
+  educationLists: {
     color: theme.palette.primary[400],
   },
 
-  productOpen: {
+  educationOpen: {
     display: "flex",
     gap: "12px",
     width: "100%",
   },
-  productPlatformBtnOpen: {},
+  educationPlatformBtnOpen: {},
   cards: {
     display: "flex",
     justifyContent: "space-between",

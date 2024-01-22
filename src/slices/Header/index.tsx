@@ -4,7 +4,8 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 
 import useStyles from "../../generalAssets/styles/header";
-import { Typography } from "@mui/material";
+import { Button, Drawer, SwipeableDrawer, Typography } from "@mui/material";
+import { useState } from "react";
 /**
  * Props for `Header`.
  */
@@ -15,6 +16,9 @@ export type HeaderProps = SliceComponentProps<Content.HeaderSlice>;
  */
 const Header = ({ slice }: HeaderProps): JSX.Element => {
   const classes = useStyles();
+  const [openMobileDrawer, setOpenMobileDrawer] = useState(false);
+  const [overlayActive, setOverlayActive] = useState(false);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -33,12 +37,13 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
         <div className={classes.headerItems}>
           {slice.items.map((item, index) => {
             return (
-              <PrismicNextLink field={item.link} key={index}>
+              <PrismicNextLink
+                field={item.link}
+                key={index}
+                className={classes.headerItem}
+              >
                 {" "}
-                <Typography variant="subtitle1" className={classes.headerItem}>
-                  {" "}
-                  {item.label}
-                </Typography>
+                <Typography variant="subtitle1"> {item.label}</Typography>
               </PrismicNextLink>
             );
           })}

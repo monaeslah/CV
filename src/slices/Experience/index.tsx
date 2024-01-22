@@ -3,7 +3,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/experiemce";
-import { Typography } from "@mui/material";
+import { Theme, Typography, useMediaQuery } from "@mui/material";
 
 /**
  * Props for `Experience`.
@@ -15,19 +15,25 @@ export type ExperienceProps = SliceComponentProps<Content.ExperienceSlice>;
  */
 const Experience = ({ slice }: ExperienceProps): JSX.Element => {
   const classes = useStyles();
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className={classes.featureBlock}>
-        <Typography variant="h3" className={classes.featureHeading}>
+      <div className={classes.experienceBlock}>
+        <Typography
+          variant={isSmallScreen ? "h5" : "h3"}
+          className={classes.experienceHeading}
+        >
           {slice.primary.title}
         </Typography>
-        <div className={classes.featuresList}>
+        <div className={classes.experiencesList}>
           {slice.items.map((item: any, index: any) => {
             return (
-              <div className={classes.featureContainer} key={index}>
+              <div className={classes.experienceContainer} key={index}>
                 <Typography variant="h2" className={classes.title}>
                   <>{item.title}</>
                 </Typography>
@@ -36,7 +42,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                 </Typography>
                 <Typography
                   variant="body1"
-                  className={classes.featureItemsDescription}
+                  className={classes.experienceItemsDescription}
                 >
                   {item.description}
                 </Typography>

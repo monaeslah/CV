@@ -1,7 +1,7 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme?: any) => ({
-  featureBlock: {
+  experienceBlock: {
     maxWidth: "1024px",
     display: "flex",
     flexDirection: "column",
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme?: any) => ({
       },
     },
   },
-  featureHeading: {
+  experienceHeading: {
     color: theme.palette.primary[100],
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
@@ -28,13 +28,13 @@ const useStyles = makeStyles((theme?: any) => ({
       textAlign: "center",
     },
   },
-  featureChildren: {
+  experienceChildren: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: "106px",
   },
-  featuresHeadline: {
+  experiencesHeadline: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -42,14 +42,19 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   title: {
     color: theme.palette.primary[100],
-    textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   SubTitle: {
     color: theme.palette.primary[200],
-    textAlign: "center",
+
     maxWidth: "900px",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
-  featuresList: {
+  experiencesList: {
     display: "flex",
     alignItems: "flex-start",
     position: "relative" as "relative",
@@ -58,6 +63,9 @@ const useStyles = makeStyles((theme?: any) => ({
 
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
+      [theme.breakpoints.down("sm")]: {
+        textAlign: "center",
+      },
     },
     [theme.breakpoints.up("md")]: {
       width: "865px",
@@ -88,7 +96,7 @@ const useStyles = makeStyles((theme?: any) => ({
       },
     },
   },
-  featureArrows: {
+  experienceArrows: {
     position: "relative",
     width: "230px",
     height: "356px",
@@ -113,7 +121,7 @@ const useStyles = makeStyles((theme?: any) => ({
       marginBottom: "0px",
     },
   },
-  featureContainer: {
+  experienceContainer: {
     display: "flex",
     flexDirection: "column",
     backgroundRepeat: "no-repeat",
@@ -127,7 +135,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 
-  featureItem: {
+  experienceItem: {
     display: "flex",
     width: "95%",
     margin: "40px 0",
@@ -144,19 +152,19 @@ const useStyles = makeStyles((theme?: any) => ({
       bottom: "3%",
     },
   },
-  featureItemsDescription: {
+  experienceItemsDescription: {
     color: theme.palette.primary[400],
     display: "flex",
     flexDirection: "column",
     gap: "20px",
   },
 
-  featureIcon: {
+  experienceIcon: {
     maxWidth: "58px",
     height: "58px",
     [theme.breakpoints.down("sm")]: {},
   },
-  featureExample: {
+  experienceExample: {
     position: "absolute",
     bottom: "7%",
     left: "15%",
@@ -179,7 +187,7 @@ const useStyles = makeStyles((theme?: any) => ({
       left: "-3%",
     },
   },
-  featuresContent: {
+  experiencesContent: {
     maxWidth: "202px",
     height: "96px",
     marginBottom: "39px",
@@ -188,7 +196,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 
-  featureHiddenContent: {
+  experienceHiddenContent: {
     width: "220px",
     minHeight: "238px",
     padding: "26px",
