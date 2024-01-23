@@ -192,6 +192,7 @@ export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | PortfolioSlice
   | HobbiesSlice
   | EducationSlice
   | ExperienceSlice
@@ -809,6 +810,36 @@ export type IntroductionSlice = prismic.SharedSlice<
   IntroductionSliceVariation
 >;
 
+/**
+ * Default variation for Portfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Portfolio*
+ */
+type PortfolioSliceVariation = PortfolioSliceDefault;
+
+/**
+ * Portfolio Shared Slice
+ *
+ * - **API ID**: `portfolio`
+ * - **Description**: Portfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSlice = prismic.SharedSlice<
+  "portfolio",
+  PortfolioSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -864,6 +895,9 @@ declare module "@prismicio/client" {
       IntroductionSliceDefaultPrimary,
       IntroductionSliceVariation,
       IntroductionSliceDefault,
+      PortfolioSlice,
+      PortfolioSliceVariation,
+      PortfolioSliceDefault,
     };
   }
 }

@@ -43,7 +43,10 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
                 className={classes.headerItem}
               >
                 {" "}
-                <Typography variant="subtitle1"> {item.label}</Typography>
+                <Typography variant="subtitle1" className={classes.headerTitle}>
+                  {" "}
+                  {item.label}
+                </Typography>
               </PrismicNextLink>
             );
           })}

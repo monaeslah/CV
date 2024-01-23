@@ -6,11 +6,13 @@ const useStyles = makeStyles((theme?: any) => {
   return {
     background: {
       width: "1440px",
-
-      margin: "0 auto 30px auto",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      margin: "0 auto",
       maxWidth: "100%",
       background: theme.palette.primary[100],
-      marginBottom: "96px",
+      zIndex: 99,
 
       [theme.breakpoints.down("md")]: {
         margin: "0 auto 0px auto",
@@ -31,6 +33,7 @@ const useStyles = makeStyles((theme?: any) => {
       margin: "10px 24px",
       justifyContent: "space-between",
       alignItems: "flex-start",
+
       [theme.breakpoints.down("sm")]: {
         padding: "24px 0",
         margin: "10px 24px",
@@ -41,6 +44,7 @@ const useStyles = makeStyles((theme?: any) => {
         height: "78px",
       },
     },
+    headerTitle: { color: theme.palette.primary[800] },
     container: {
       display: "flex",
       justifyContent: "flex-end",
