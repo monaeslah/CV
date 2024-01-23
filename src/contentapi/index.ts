@@ -9,17 +9,19 @@ import { LinkField } from '@prismicio/client'
 import Header from '@/slices/Header'
 import Introduction from '@/slices/Introduction';
 import Experience from '@/slices/Experience';
+
 import Education from '@/slices/Education';
 import Hobbies from '@/slices/Hobbies';
 import Footer from '@/slices/Footer';
+import Portfolio from '@/slices/Portfolio';
 export const components = {
     header: Header,
     introduction:Introduction,
     experience:Experience,
     education:Education,
     hobbies:Hobbies,
-    footer:Footer
-    
+    footer:Footer,
+    portfolio:Portfolio
    
   }
 

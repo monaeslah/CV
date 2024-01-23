@@ -811,6 +811,56 @@ export type IntroductionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Portfolio → Primary*
+ */
+export interface PortfolioSliceDefaultPrimary {
+  /**
+   * Title field in *Portfolio → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Portfolio → Items*
+ */
+export interface PortfolioSliceDefaultItem {
+  /**
+   * cover field in *Portfolio → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].cover
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Portfolio → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * LinkTo field in *Portfolio → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].linkto
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkto: prismic.LinkField;
+}
+
+/**
  * Default variation for Portfolio Slice
  *
  * - **API ID**: `default`
@@ -819,8 +869,8 @@ export type IntroductionSlice = prismic.SharedSlice<
  */
 export type PortfolioSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  never
+  Simplify<PortfolioSliceDefaultPrimary>,
+  Simplify<PortfolioSliceDefaultItem>
 >;
 
 /**
@@ -896,6 +946,8 @@ declare module "@prismicio/client" {
       IntroductionSliceVariation,
       IntroductionSliceDefault,
       PortfolioSlice,
+      PortfolioSliceDefaultPrimary,
+      PortfolioSliceDefaultItem,
       PortfolioSliceVariation,
       PortfolioSliceDefault,
     };
