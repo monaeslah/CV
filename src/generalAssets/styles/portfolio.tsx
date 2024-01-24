@@ -11,89 +11,45 @@ const useStyles = makeStyles((theme?: any) => ({
     color: theme.palette.primary[600],
     lineHeight: "26px!important",
   },
-  portfolioItems: {},
-  timeline: {
-    position: "relative",
-    maxWidth: "100%",
-    background: theme.palette.primary[900],
-    padding: "40px 80px",
-    display: "flex",
-    justifyContent: "space-between",
-    [theme.breakpoints.down("md")]: {
-      padding: "24px",
-    },
-  },
-  line: {
-    position: "absolute",
-    left: "50%",
-    top: 0,
-    bottom: 0,
-    borderLeft: "2px solid #ffffff",
-    "::before": {
-      // This part extends the line above the timeline
-      content: '""',
-      position: "absolute",
-      top: "-20px", // Adjust as needed
-      left: "-1px", // Adjust for the border width
-      height: "20px", // Adjust as needed
-      borderLeft: "2px solid #ffffff", // Same as the line color
-    },
-    "::after": {
-      // This part extends the line below the timeline
-      content: '""',
-      position: "absolute",
-      bottom: "-20px", // Adjust as needed
-      left: "-1px", // Adjust for the border width
-      height: "20px", // Adjust as needed
-      borderLeft: "2px solid #ffffff", // Same as the line color
-    },
-  },
-
-  ////////
-  entry: {
-    position: "relative",
-    width: "calc(50% - 40px)", // Adjust the spacing as needed
-    padding: "20px",
-    boxSizing: "border-box",
-  },
-  leftEntry: {
-    float: "left",
-    textAlign: "right",
-  },
-  rightEntry: {
-    float: "right",
-    textAlign: "left",
-  },
-  icon: {
-    background: "white",
-    display: "block",
-    width: "40px",
-    height: "40px",
-    borderRadius: "40px",
-    backgroundSize: "cover",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    zIndex: 2,
-  },
-  dot: {
-    position: "absolute",
-    top: "50%",
-    left: "-6px",
-    transform: "translateX(-50%) translateY(-50%)",
-
-    borderRadius: "50%",
-    backgroundColor: theme.palette.secondary.main,
+  portfolioItems: {
     "& img": {
-      height: "12px",
-      width: "12px",
+      width: "100%",
+      height: "100%",
     },
   },
-  date: {
-    marginBottom: "20px",
-    color: theme.palette.secondary.main,
+
+  ///////cards//////////
+  sample: {
+    display: "flex",
+    justifyContent: "center",
   },
+  img: {
+    width: "100%",
+    height: "100%",
+    "--color": "#8A9B0F",
+    "--border": "10px",
+    "--offset": "20px",
+    "--gap": "5px",
+    "--_c":
+      "var(--color) var(--border), #0000 0 calc(100% - var(--border)),var(--color) 0",
+    "--_o": "calc(3 * var(--offset))",
+    padding: `calc(var(--gap) + var(--border)) calc(var(--gap) + var(--border) + var(--offset)) 
+              calc(var(--gap) + var(--border) + var(--offset)) calc(var(--gap) + var(--border))`,
+    background: `linear-gradient(var(--_c)) var(--_o) var(--_o), linear-gradient(90deg, var(--_c)) var(--_o) var(--_o)`,
+    backgroundSize: "calc(100% - var(--_o)) calc(100% - var(--_o))",
+    backgroundRepeat: "no-repeat",
+    filter: "grayscale(.4)",
+    transition: ".5s",
+    cursor: "pointer",
+
+    "&:hover": {
+      backgroundPosition: "0px 0px",
+      backgroundSize: "calc(100% - var(--offset)) calc(100% - var(--offset))",
+      filter: "grayscale(0)",
+      transform: "translate(10px, 10px)",
+    },
+  },
+  // other styles (like body) can be added her
 }));
 
 export default useStyles;

@@ -3,8 +3,9 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/portfolio";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { Theme, Typography } from "@mui/material";
+import { Card, Theme, Typography } from "@mui/material";
 import { PrismicNextImage } from "@prismicio/next";
+import TelescopeComponent from "./hover";
 
 /**
  * Props for `Portfolio`.
@@ -16,6 +17,11 @@ export type PortfolioProps = SliceComponentProps<Content.PortfolioSlice>;
  */
 const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
   const classes = useStyles();
+  const imageStyles = [
+    {}, // No additional styles for the first image
+    { "--color": "#4ECDC4" }, // Styles for the second image
+    { "--color": "#FF6B6B" }, // Styles for the third image
+  ];
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("md")
   );
@@ -29,13 +35,28 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
           {slice.primary.title}
         </Typography>
       </div>
-      {slice.items.map((item: any, index: any) => {
-        return (
-          <div className={classes.portfolioItems} key={index}>
-            <PrismicNextImage field={item.cover} />
-          </div>
-        );
-      })}
+
+      <div className={classes.sample}>
+        {slice.items.map((item, index) => {
+          return (
+            <div key={index}>
+              <PrismicNextImage
+                field={item.cover}
+                alt=""
+                className={classes.img}
+                style={
+                  imageStyles[index]
+                    ? (imageStyles[index] as React.CSSProperties)
+                    : {}
+                }
+              />
+            </div>
+          );
+        })}
+      </div>
+      <div className={classes.img}>
+        <TelescopeComponent />
+      </div>
     </section>
   );
 };
