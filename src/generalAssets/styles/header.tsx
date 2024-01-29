@@ -134,8 +134,19 @@ const useStyles = makeStyles((theme?: any) => {
       display: "block",
     },
     mobileMenu: {
+      width: "35px",
+      height: "35px",
+      cursor: "pointer",
       [theme.breakpoints.up("md")]: {
         display: "none",
+      },
+    },
+    lastTwoItemsWrapper: {
+      display: "flex",
+      gap: "10px",
+      margin: "0 auto 0px auto",
+      [theme.breakpoints.down("sm")]: {
+        flexDirection: "column",
       },
     },
     mobileItemsColumn: {
@@ -161,10 +172,33 @@ const useStyles = makeStyles((theme?: any) => {
       justifyContent: "space-between",
     },
     closeBtn: {
-      // position: "absolute",
-      // left: "90%",
-      // top: "9%",
+      width: "35px",
+      height: "35px",
+
       cursor: "pointer",
+    },
+    tryLink: {
+      display: "flex",
+      padding: "12px 18px",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: "8px",
+      borderRadius: "30px",
+      background: theme.palette.text.primary,
+      textAlign: "center",
+      fontSize: "16px",
+      fontStyle: "normal",
+      fontWeight: "400",
+      width: "112px",
+      lineHeight: "20px",
+      letterSpacing: "0.16px",
+      textTransform: "capitalize",
+      cursor: "pointer",
+      "& a": {
+        textDecoration: "none",
+        color: theme.palette.primary[100],
+        fontFamily: "'Roboto', sans-serif",
+      },
     },
   };
 });

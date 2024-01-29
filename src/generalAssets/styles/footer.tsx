@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   footerDescription: {
-    color: theme.palette.primary[900],
+    color: theme.palette.primary[800],
     fontWeight: "500!important" as any,
     paddingBottom: "10px",
   },
@@ -131,14 +131,14 @@ const useStyles = makeStyles((theme?: any) => ({
       lineHeight: "inherit",
       letterSpacing: "1px",
       textAlign: "center",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
     },
     "& a": {
       fontSize: "12px",
       textDecoration: "none",
       paddingLeft: "25px",
       letterSpacing: "1px",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
     },
   },
   info: {
@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
     "& p": {
       margin: "0",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
 
       [theme.breakpoints.down("sm")]: {},
     },
@@ -196,7 +196,7 @@ const useStyles = makeStyles((theme?: any) => ({
     margin: "0",
   },
   child: {
-    color: theme.palette.primary[900],
+    color: theme.palette.primary[800],
     textDecoration: "none",
   },
   scrollUp: { marginLeft: "auto" },

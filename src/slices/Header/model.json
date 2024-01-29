@@ -34,6 +34,14 @@
             "label": "Title",
             "placeholder": ""
           }
+        },
+        "close_responsive": {
+          "type": "Image",
+          "config": {
+            "label": "close responsive",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {

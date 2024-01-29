@@ -601,6 +601,16 @@ export interface HeaderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * close responsive field in *Header → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.close_responsive
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  close_responsive: prismic.ImageField<never>;
 }
 
 /**

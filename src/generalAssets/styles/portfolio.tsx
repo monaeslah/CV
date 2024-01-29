@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme?: any) => ({
   title: {
     color: theme.palette.primary[100],
     [theme.breakpoints.down("md")]: {
-      color: theme.palette.primary[800],
+      color: theme.palette.primary[100],
     },
   },
   titleColor: {
@@ -72,16 +72,24 @@ const useStyles = makeStyles((theme?: any) => ({
     display: "flex",
     justifyContent: "center",
     margin: "0 auto",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
   },
   sampleVeiw: {
     width: "30%",
-    // display: "flex",
-    // justifyContent: "center",
+    [theme.breakpoints.down("md")]: {
+      width: "50%",
+
+      flexDirection: "column",
+      padding: "0px 10px",
+      margin: "0 auto",
+    },
   },
   img: {
     width: "100%",
     height: "100%",
-    "--color": "#8A9B0F",
+    "--color": " #16147ea6",
     "--border": "10px",
     "--offset": "20px",
     "--gap": "5px",

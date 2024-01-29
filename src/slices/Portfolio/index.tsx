@@ -26,9 +26,9 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
   const classes = useStyles();
   const imageStyles = [
     {}, // No additional styles for the first image
-    { "--color": "#4ECDC4" }, // Styles for the second image
+    { "--color": "#8A9B0F" }, // Styles for the second image
     { "--color": "#FF6B6B" }, // Styles for the third image
-    { "--color": "#3a619b" }, // Styles for the third image
+    { "--color": "#3c1298eb" }, // Styles for the third image
   ];
   const colorClasses = [
     classes.orange,

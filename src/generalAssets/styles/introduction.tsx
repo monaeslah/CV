@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   introductionImageSection: {
-    width: "550px",
+    // width: "550px",
     height: "500px",
     [theme.breakpoints.down("sm")]: {
       paddingTop: "60px",
