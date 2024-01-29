@@ -1,8 +1,8 @@
 {
-  "id": "portfolio",
+  "id": "samples",
   "type": "SharedSlice",
-  "name": "Portfolio",
-  "description": "Portfolio",
+  "name": "Samples",
+  "description": "Samples",
   "variations": [
     {
       "id": "default",
@@ -18,35 +18,28 @@
             "label": "Title",
             "placeholder": ""
           }
-        },
-        "slice_type": {
-          "type": "Text",
-          "config": {
-            "label": "slice Type",
-            "placeholder": ""
-          }
         }
       },
       "items": {
-        "cover": {
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Video",
+            "placeholder": ""
+          }
+        },
+        "image": {
           "type": "Image",
           "config": {
-            "label": "cover",
+            "label": "Image",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "description": {
-          "type": "Text",
-          "config": {
-            "label": "Description",
-            "placeholder": ""
-          }
-        },
-        "linkto": {
+        "link": {
           "type": "Link",
           "config": {
-            "label": "LinkTo",
+            "label": "Link",
             "placeholder": "",
             "select": null
           }

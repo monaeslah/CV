@@ -7,6 +7,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "under",
 				"type": "Text"
+			},
+			"slice_type": {
+				"__TYPE__": "FieldContent",
+				"value": "before",
+				"type": "Text"
 			}
 		},
 		"items": [

@@ -22,6 +22,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id={slice.slice_type}
     >
       <div className={classes.experienceBlock}>
         <Typography

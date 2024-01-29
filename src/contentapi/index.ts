@@ -14,6 +14,7 @@ import Education from '@/slices/Education';
 import Hobbies from '@/slices/Hobbies';
 import Footer from '@/slices/Footer';
 import Portfolio from '@/slices/Portfolio';
+import Samples from '@/slices/Samples';
 export const components = {
     header: Header,
     introduction:Introduction,
@@ -21,7 +22,8 @@ export const components = {
     education:Education,
     hobbies:Hobbies,
     footer:Footer,
-    portfolio:Portfolio
+    portfolio:Portfolio,
+    samples:Samples
    
   }
 
@@ -77,4 +79,14 @@ export const getExtraPageContent = async (uid: string) => {
       footer
     }
   }
+}
+export const removeHttps = (item: any): LinkField => {
+  // Check if item is defined and has a property 'url'
+  if (item && item.url) {
+    // Now it's safe to check if 'url' includes 'https://' and '#'
+    if (item.url.includes('#') && item.url.includes('https://')) {
+      item.url = item.url.substring(7);
+    }
+  }
+  return item;
 }

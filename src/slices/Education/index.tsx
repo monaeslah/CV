@@ -21,6 +21,7 @@ const Education = ({ slice }: EducationProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={classes.background}
+      id={slice.slice_type}
     >
       <div className={classes.background}>
         <div className={classes.educationBlock}>

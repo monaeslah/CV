@@ -76,6 +76,14 @@
 							"value": "grass",
 							"type": "Text"
 						}
+					],
+					[
+						"type_id",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "with",
+							"type": "Text"
+						}
 					]
 				]
 			}

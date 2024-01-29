@@ -6,6 +6,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/header";
 import { Button, Drawer, SwipeableDrawer, Typography } from "@mui/material";
 import { useState } from "react";
+import { removeHttps } from "@/contentapi";
 /**
  * Props for `Header`.
  */
@@ -38,7 +39,7 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
           {slice.items.map((item, index) => {
             return (
               <PrismicNextLink
-                field={item.link}
+                field={removeHttps(item.link)}
                 key={index}
                 className={classes.headerItem}
               >

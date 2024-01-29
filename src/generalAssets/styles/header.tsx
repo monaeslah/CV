@@ -5,17 +5,10 @@ const useStyles = makeStyles((theme?: any) => {
 
   return {
     background: {
-      width: "1440px",
-      position: "fixed",
-      top: 0,
-      left: 0,
-      margin: "0 auto",
       maxWidth: "100%",
       background: theme.palette.primary[100],
-      zIndex: 99,
-
+      padding: "5px 80px",
       [theme.breakpoints.down("md")]: {
-        margin: "0 auto 0px auto",
         position: "fixed",
         width: "100%",
         top: "0",
@@ -23,16 +16,15 @@ const useStyles = makeStyles((theme?: any) => {
         zIndex: "10",
         padding: "0px 10px",
       },
-      [theme.breakpoints.down("sm")]: {
-        // width: "300px",
-      },
     },
 
     headerBlock: {
+      maxWidth: "1024px",
+      margin: "auto",
+      height: "100px",
       display: "flex",
-      margin: "10px 24px",
       justifyContent: "space-between",
-      alignItems: "flex-start",
+      alignItems: "center",
 
       [theme.breakpoints.down("sm")]: {
         padding: "24px 0",
@@ -94,13 +86,17 @@ const useStyles = makeStyles((theme?: any) => {
     },
     headerItems: {
       display: "flex",
-      flexDirection: "column",
+      justifyContent: "space-between",
       alignItems: "flex-start",
-      [theme.breakpoints.down("sm")]: { marginLeft: "auto" },
+      [theme.breakpoints.down("sm")]: {
+        marginLeft: "auto",
+        flexDirection: "column",
+      },
     },
     headerItem: {
       color: theme.palette.primary[400],
       textDecoration: "none",
+      padding: "0 8px",
       [theme.breakpoints.down("sm")]: { marginLeft: "auto" },
     },
     headerImage: {

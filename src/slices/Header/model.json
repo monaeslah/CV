@@ -51,6 +51,13 @@
             "label": "Label",
             "placeholder": ""
           }
+        },
+        "type_id": {
+          "type": "Text",
+          "config": {
+            "label": "type id",
+            "placeholder": ""
+          }
         }
       }
     }
