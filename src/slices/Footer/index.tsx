@@ -4,7 +4,7 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/footer";
-import { Typography } from "@mui/material";
+import { Theme, Typography, useMediaQuery } from "@mui/material";
 import Input from "@/app/components/Input";
 /**
  * Props for `Footer`.
@@ -16,6 +16,9 @@ export type FooterProps = SliceComponentProps<Content.FooterSlice>;
  */
 const Footer = ({ slice }: FooterProps): JSX.Element => {
   const classes = useStyles();
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -40,8 +43,34 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
             {" "}
             {slice.primary.message}
           </Typography>
+          <div className={classes.socialMediaContainer}>
+            {slice.items.map((item, index) => {
+              return (
+                <div className={classes.socialMediaMobile} key={index}>
+                  <PrismicNextLink field={item.link}>
+                    <PrismicNextImage field={item.icon} alt="" />
+                  </PrismicNextLink>
+                </div>
+              );
+            })}
+          </div>
         </div>
         {/* <div className={classes.info}>
+
+
+   {
+                slice.items.map((item, index) => {
+                  return (
+                    <div className={classes.socialMediaMobile} key={index}>
+                      <PrismicNextLink field={item.link}>
+                        <PrismicNextImage field={item.icon} alt="" />
+                      </PrismicNextLink>
+                    </div>
+                  );
+                });
+              }
+
+
           <div className={classes.footerAttribute}> */}
         {/* <Typography variant="h5" className={classes.title}>
                 {slice.primary.title}

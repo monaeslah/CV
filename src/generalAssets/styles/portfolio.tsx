@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme?: any) => ({
     maxWidth: "1024px",
     display: "flex",
     flexDirection: "column",
-    gap: "96px",
+    padding: "76px",
     margin: "90px auto ",
     [theme.breakpoints.down("md")]: {
       gap: "40px",
@@ -22,8 +22,10 @@ const useStyles = makeStyles((theme?: any) => ({
   portfolioContents: {},
   title: {
     color: theme.palette.primary[100],
+    marginBottom: "20px",
     [theme.breakpoints.down("md")]: {
       color: theme.palette.primary[100],
+      marginBottom: "40px",
     },
   },
   titleColor: {

@@ -25,10 +25,10 @@ interface MainComponentProps {
 const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
   const classes = useStyles();
   const imageStyles = [
-    {}, // No additional styles for the first image
-    { "--color": "#8A9B0F" }, // Styles for the second image
-    { "--color": "#FF6B6B" }, // Styles for the third image
-    { "--color": "#3c1298eb" }, // Styles for the third image
+    {},
+    { "--color": "#8A9B0F" },
+    { "--color": "#FF6B6B" },
+    { "--color": "#3c1298eb" },
   ];
   const colorClasses = [
     classes.orange,

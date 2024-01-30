@@ -21,8 +21,12 @@ const useStyles = makeStyles((theme?: any) => ({
     gap: "40px",
     maxWidth: "1024px",
     margin: "auto",
+
     [theme.breakpoints.down("sm")]: {
       padding: "24px",
+      "& h6": {
+        margin: "0 auto",
+      },
     },
   },
   logo: {
@@ -91,9 +95,6 @@ const useStyles = makeStyles((theme?: any) => ({
     alignItems: "center",
     gap: "22px",
     flexWrap: "wrap",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
   socialMediaIcon: {
     display: "flex",
@@ -104,13 +105,20 @@ const useStyles = makeStyles((theme?: any) => ({
       textDecoration: "none",
       color: "white",
     },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   socialMediaMobile: {
     display: "none",
 
-    "& img": { cursor: "pointer" },
     [theme.breakpoints.down("sm")]: {
       display: "flex",
+      "& img": { cursor: "pointer", width: "58px", height: "58px" },
+      "& a": {
+        textDecoration: "none",
+        color: "white",
+      },
 
       margin: "auto",
       alignItems: "center",
