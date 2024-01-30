@@ -1,12 +1,15 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme?: any) => ({
-  featureBlock: {
+  experienceBlock: {
     maxWidth: "1024px",
+    minHeight: "500px",
     display: "flex",
     flexDirection: "column",
-    gap: "96px",
+    gap: "66px",
     margin: "0 auto ",
+    marginBottom: "40px",
+    padding: "0 76px",
     [theme.breakpoints.down("md")]: {
       gap: "40px",
       margin: "0 24px 40px 24px ",
@@ -19,7 +22,7 @@ const useStyles = makeStyles((theme?: any) => ({
       },
     },
   },
-  featureHeading: {
+  experienceHeading: {
     color: theme.palette.primary[100],
     [theme.breakpoints.down("sm")]: {
       textAlign: "center",
@@ -28,13 +31,13 @@ const useStyles = makeStyles((theme?: any) => ({
       textAlign: "center",
     },
   },
-  featureChildren: {
+  experienceChildren: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     gap: "106px",
   },
-  featuresHeadline: {
+  experiencesHeadline: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -42,22 +45,27 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   title: {
     color: theme.palette.primary[100],
-    textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
   },
   SubTitle: {
     color: theme.palette.primary[200],
-    textAlign: "center",
-    maxWidth: "900px",
-  },
-  featuresList: {
-    display: "flex",
-    alignItems: "flex-start",
-    position: "relative" as "relative",
-    justifyContent: "space-between",
-    flexWrap: "wrap",
 
+    maxWidth: "900px",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
+  },
+  experiencesList: {
+    display: "flex",
+
+    flexDirection: "row",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
+      [theme.breakpoints.down("sm")]: {
+        textAlign: "center",
+      },
     },
     [theme.breakpoints.up("md")]: {
       width: "865px",
@@ -88,7 +96,7 @@ const useStyles = makeStyles((theme?: any) => ({
       },
     },
   },
-  featureArrows: {
+  experienceArrows: {
     position: "relative",
     width: "230px",
     height: "356px",
@@ -113,13 +121,17 @@ const useStyles = makeStyles((theme?: any) => ({
       marginBottom: "0px",
     },
   },
-  featureContainer: {
+  experienceContainer: {
     display: "flex",
+    maxWidth: "350px",
+    width: "100%",
+    borderRadius: "50px",
     flexDirection: "column",
     backgroundRepeat: "no-repeat",
     flex: "1 0 50%",
     boxSizing: "border-box",
     padding: "10px",
+
     [theme.breakpoints.down("sm")]: {
       margin: "0px auto 40px auto",
       maxWidth: "330px",
@@ -127,7 +139,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
 
-  featureItem: {
+  experienceItem: {
     display: "flex",
     width: "95%",
     margin: "40px 0",
@@ -144,78 +156,116 @@ const useStyles = makeStyles((theme?: any) => ({
       bottom: "3%",
     },
   },
-  featureItemsDescription: {
+  experienceItemsDescription: {
     color: theme.palette.primary[400],
+    width: "500px",
     display: "flex",
     flexDirection: "column",
     gap: "20px",
+    [theme.breakpoints.down("md")]: {
+      margin: "0 auto",
+      width: "100%",
+    },
   },
-
-  featureIcon: {
+  productPlatformBtn: {
+    margin: "0",
+    color: theme.palette.primary[100],
+    height: "40px",
+    display: "flex",
+    padding: "8px 18px",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "8px",
+    fontSize: "14px",
+    textAlign: "center",
+    fontWeight: "400",
+    cursor: "pointer",
+    bottom: "5%",
+    textDecoration: "underline",
+    textUnderlineOffset: "3px",
+    textDecorationThickness: "1px",
+    [theme.breakpoints.down("md")]: {
+      bottom: "0%!important",
+    },
+  },
+  productPlatformBtnOpen: {
+    bottom: "3%",
+  },
+  experienceIcon: {
     maxWidth: "58px",
     height: "58px",
     [theme.breakpoints.down("sm")]: {},
   },
-  featureExample: {
+
+  visible: {
+    display: "block",
+  },
+
+  flipped: {
+    position: "relative",
+  },
+
+  flippedBack: { position: "relative" },
+  flipCardFront: { display: "flex", justifyContent: "space-between" },
+  flipCardBack: {
+    backfaceVisibility: "hidden",
+    transform: "rotateY(180deg)",
     position: "absolute",
-    bottom: "7%",
-    left: "15%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "8px 18px",
-    gap: "4px",
-    color: theme.palette.primary[100],
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+    right: "90%",
+
+    cursor: "pointer",
+  },
+  underline: {
     textDecoration: "underline",
     textUnderlineOffset: "3px",
     textDecorationThickness: "1px",
-    cursor: "pointer",
-    [theme.breakpoints.down("sm")]: {
-      position: "relative",
-      width: "288px",
-      gap: "8px",
-      height: "42px",
-      bottom: "-6%",
-      left: "-3%",
+  },
+  animateFlip: {
+    animation: `$flipEffect 0.6s`,
+  },
+  "@keyframes flipEffect": {
+    "100%": {
+      transform: "rotateY(0deg)",
+      opacity: 1,
+    },
+    "50%": {
+      opacity: 0.5,
+    },
+    "0%": {
+      transform: "rotateY(90deg)",
+      opacity: 0,
     },
   },
-  featuresContent: {
-    maxWidth: "202px",
-    height: "96px",
-    marginBottom: "39px",
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: "0",
+  animateFlipTwo: { animation: `$flipEffect2 0.6s` },
+  "@keyframes flipEffect2": {
+    "0%": {
+      transform: "rotateY(0deg)",
+      opacity: 1,
+    },
+    "50%": {
+      opacity: 0.5,
+    },
+    "100%": {
+      transform: "rotateY(90deg)",
+      opacity: 0,
     },
   },
+  fixedPositionBackCard: {
+    zIndex: 1000,
+    backgroundColor: theme.palette.primary[600],
+    padding: theme.spacing(6),
+    borderRadius: theme.shape.borderRadius,
+    boxShadow: theme.shadows[5],
+    width: "100%",
+    maxHeight: "100%",
 
-  featureHiddenContent: {
-    width: "220px",
-    minHeight: "238px",
-    padding: "26px",
-    paddingLeft: "28px",
-    position: "absolute",
-    top: "370px",
-    background: "rgba(241, 239, 255, 0.40)",
-    borderRadius: "20px",
-    color: theme.palette.primary[400],
-    transition: "height 2s ease-in-out  ",
-    "& p": {
-      margin: "0",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "333px",
-      height: "auto",
-      position: "relative",
-      border: " 0px",
-      borderRadius: "0 0 20px 20px",
-      padding: "0 26px 26px 26px",
-    },
-    "&.hidden": {
-      display: "none",
-    },
-  },
-  visible: {
-    display: "block",
+    margin: "0 10%",
+    backfaceVisibility: "hidden",
+
+    transformStyle: "preserve-3d",
   },
 }));
 

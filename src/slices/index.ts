@@ -10,4 +10,6 @@ export const components = {
   header: dynamic(() => import("./Header")),
   hobbies: dynamic(() => import("./Hobbies")),
   introduction: dynamic(() => import("./Introduction")),
+  portfolio: dynamic(() => import("./Portfolio")),
+  samples: dynamic(() => import("./Samples")),
 };

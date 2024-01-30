@@ -34,6 +34,14 @@
             "label": "Title",
             "placeholder": ""
           }
+        },
+        "close_responsive": {
+          "type": "Image",
+          "config": {
+            "label": "close responsive",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {
@@ -49,6 +57,13 @@
           "type": "Text",
           "config": {
             "label": "Label",
+            "placeholder": ""
+          }
+        },
+        "type_id": {
+          "type": "Text",
+          "config": {
+            "label": "type id",
             "placeholder": ""
           }
         }

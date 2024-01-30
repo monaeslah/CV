@@ -2,7 +2,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/introduction";
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery, Theme } from "@mui/material";
 import { PrismicNextImage } from "@prismicio/next";
 
 /**
@@ -15,6 +15,9 @@ export type IntroductionProps = SliceComponentProps<Content.IntroductionSlice>;
  */
 const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
   const classes = useStyles();
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -24,7 +27,10 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
       {" "}
       <div className={classes.introductionBlock}>
         <div className={classes.introductionContents}>
-          <Typography variant="h3" className={classes.tagline}>
+          <Typography
+            variant={isSmallScreen ? "h5" : "h3"}
+            className={classes.tagline}
+          >
             {slice.primary.title}
           </Typography>
           <Typography

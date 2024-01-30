@@ -21,8 +21,12 @@ const useStyles = makeStyles((theme?: any) => ({
     gap: "40px",
     maxWidth: "1024px",
     margin: "auto",
+
     [theme.breakpoints.down("sm")]: {
       padding: "24px",
+      "& h6": {
+        margin: "0 auto",
+      },
     },
   },
   logo: {
@@ -59,7 +63,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   footerDescription: {
-    color: theme.palette.primary[900],
+    color: theme.palette.primary[800],
     fontWeight: "500!important" as any,
     paddingBottom: "10px",
   },
@@ -91,9 +95,6 @@ const useStyles = makeStyles((theme?: any) => ({
     alignItems: "center",
     gap: "22px",
     flexWrap: "wrap",
-    [theme.breakpoints.down("sm")]: {
-      display: "none",
-    },
   },
   socialMediaIcon: {
     display: "flex",
@@ -104,13 +105,20 @@ const useStyles = makeStyles((theme?: any) => ({
       textDecoration: "none",
       color: "white",
     },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   socialMediaMobile: {
     display: "none",
 
-    "& img": { cursor: "pointer" },
     [theme.breakpoints.down("sm")]: {
       display: "flex",
+      "& img": { cursor: "pointer", width: "58px", height: "58px" },
+      "& a": {
+        textDecoration: "none",
+        color: "white",
+      },
 
       margin: "auto",
       alignItems: "center",
@@ -131,14 +139,14 @@ const useStyles = makeStyles((theme?: any) => ({
       lineHeight: "inherit",
       letterSpacing: "1px",
       textAlign: "center",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
     },
     "& a": {
       fontSize: "12px",
       textDecoration: "none",
       paddingLeft: "25px",
       letterSpacing: "1px",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
     },
   },
   info: {
@@ -174,7 +182,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
     "& p": {
       margin: "0",
-      color: theme.palette.primary[900],
+      color: theme.palette.primary[800],
 
       [theme.breakpoints.down("sm")]: {},
     },
@@ -196,7 +204,7 @@ const useStyles = makeStyles((theme?: any) => ({
     margin: "0",
   },
   child: {
-    color: theme.palette.primary[900],
+    color: theme.palette.primary[800],
     textDecoration: "none",
   },
   scrollUp: { marginLeft: "auto" },

@@ -9,17 +9,21 @@ import { LinkField } from '@prismicio/client'
 import Header from '@/slices/Header'
 import Introduction from '@/slices/Introduction';
 import Experience from '@/slices/Experience';
+
 import Education from '@/slices/Education';
 import Hobbies from '@/slices/Hobbies';
 import Footer from '@/slices/Footer';
+import Portfolio from '@/slices/Portfolio';
+import Samples from '@/slices/Samples';
 export const components = {
     header: Header,
     introduction:Introduction,
     experience:Experience,
     education:Education,
     hobbies:Hobbies,
-    footer:Footer
-    
+    footer:Footer,
+    portfolio:Portfolio,
+    samples:Samples
    
   }
 
@@ -75,4 +79,14 @@ export const getExtraPageContent = async (uid: string) => {
       footer
     }
   }
+}
+export const removeHttps = (item: any): LinkField => {
+  // Check if item is defined and has a property 'url'
+  if (item && item.url) {
+    // Now it's safe to check if 'url' includes 'https://' and '#'
+    if (item.url.includes('#') && item.url.includes('https://')) {
+      item.url = item.url.substring(7);
+    }
+  }
+  return item;
 }

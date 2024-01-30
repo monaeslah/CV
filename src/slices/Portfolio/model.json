@@ -1,0 +1,57 @@
+{
+  "id": "portfolio",
+  "type": "SharedSlice",
+  "name": "Portfolio",
+  "description": "Portfolio",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "slice_type": {
+          "type": "Text",
+          "config": {
+            "label": "slice Type",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "cover": {
+          "type": "Image",
+          "config": {
+            "label": "cover",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "linkto": {
+          "type": "Link",
+          "config": {
+            "label": "LinkTo",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

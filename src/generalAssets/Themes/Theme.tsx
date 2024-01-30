@@ -16,7 +16,7 @@ const mainPalette = {
   500: "#d5eeef",
   600: "#e1f3f7",
   700: "#59a9b6",
-  800: "#B1B3E0",
+  800: "#f2fdff",
   900: "#E1E0FF",
   A100: "#F8F8FF",
   A200: "#FFFF",

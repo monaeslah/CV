@@ -2,7 +2,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import useStyles from "../../generalAssets/styles/education";
-import { Typography } from "@mui/material";
+import { Theme, Typography, useMediaQuery } from "@mui/material";
 /**
  * Props for `Education`.
  */
@@ -13,39 +13,49 @@ export type EducationProps = SliceComponentProps<Content.EducationSlice>;
  */
 const Education = ({ slice }: EducationProps): JSX.Element => {
   const classes = useStyles();
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("md")
+  );
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className={classes.background}
+      id={slice.slice_type}
     >
       <div className={classes.background}>
-        <div className={classes.productBlock}>
-          <div className={classes.productContent}>
-            <Typography variant="h1" className={classes.titleColor}>
+        <div className={classes.educationBlock}>
+          <div className={classes.title}>
+            <Typography variant={isSmallScreen ? "h5" : "h3"}>
               {slice.primary.title}
             </Typography>
           </div>
           <div className={classes.educationContainer}>
             {slice.items.map((item, index) => {
               return (
-                <div className={classes.productContent} key={index}>
+                <div className={classes.educationContent} key={index}>
                   <div className={classes.cards}>
                     <div>
-                      <Typography variant="h2" className={classes.titleColor}>
+                      <Typography
+                        variant={isSmallScreen ? "body1" : "h2"}
+                        className={classes.titleColor}
+                      >
                         {item.title}
                       </Typography>
                     </div>
                     <div>
                       {" "}
-                      <Typography variant="h6" className={classes.titleColor}>
+                      <Typography
+                        variant={isSmallScreen ? "body1" : "h6"}
+                        className={classes.titleColor}
+                      >
                         {item.date}
                       </Typography>
                     </div>
                   </div>
 
                   <Typography
-                    variant="subtitle1"
+                    variant={isSmallScreen ? "subtitle2" : "subtitle1"}
                     className={classes.descriptionColor}
                   >
                     {item.description}

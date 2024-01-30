@@ -21,23 +21,23 @@ const Hobbies = ({ slice }: HobbiesProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={classes.background}
     >
-      <div className={classes.aboutBlock}>
+      <div className={classes.hobbieBlock}>
         <Typography variant="h3" className={classes.title}>
           {slice.primary.title}
         </Typography>
 
-        <div className={classes.aboutContainer}>
+        <div className={classes.hobbieContainer}>
           {slice.items.map((item, index) => {
             return (
-              <div className={classes.aboutItems} key={index}>
-                <div className={classes.aboutImageBlock}>
+              <div className={classes.hobbieItems} key={index}>
+                <div className={classes.hobbieImageBlock}>
                   <PrismicNextImage
                     field={item.icon}
-                    className={classes.aboutImage}
+                    className={classes.hobbieImage}
                     alt=""
                   />
                 </div>
-                <Typography variant="subtitle1" className={classes.aboutItem}>
+                <Typography variant="subtitle1" className={classes.hobbieItem}>
                   {item.label}
                 </Typography>
               </div>

@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ExtraPageDocumentDataSlicesSlice = ErrorSlice;
+type ExtraPageDocumentDataSlicesSlice = SamplesSlice | ErrorSlice;
 
 /**
  * Content for extra_page documents
@@ -192,6 +192,7 @@ export type HeaderDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<HeaderDocumentData>, "header", Lang>;
 
 type PageDocumentDataSlicesSlice =
+  | PortfolioSlice
   | HobbiesSlice
   | EducationSlice
   | ExperienceSlice
@@ -600,6 +601,16 @@ export interface HeaderSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * close responsive field in *Header → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.primary.close_responsive
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  close_responsive: prismic.ImageField<never>;
 }
 
 /**
@@ -625,6 +636,16 @@ export interface HeaderSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   label: prismic.KeyTextField;
+
+  /**
+   * type id field in *Header → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.items[].type_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  type_id: prismic.KeyTextField;
 }
 
 /**
@@ -809,6 +830,176 @@ export type IntroductionSlice = prismic.SharedSlice<
   IntroductionSliceVariation
 >;
 
+/**
+ * Primary content in *Portfolio → Primary*
+ */
+export interface PortfolioSliceDefaultPrimary {
+  /**
+   * Title field in *Portfolio → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * slice Type field in *Portfolio → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.primary.slice_type
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slice_type: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Portfolio → Items*
+ */
+export interface PortfolioSliceDefaultItem {
+  /**
+   * cover field in *Portfolio → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].cover
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover: prismic.ImageField<never>;
+
+  /**
+   * Description field in *Portfolio → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * LinkTo field in *Portfolio → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: portfolio.items[].linkto
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkto: prismic.LinkField;
+}
+
+/**
+ * Default variation for Portfolio Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PortfolioSliceDefaultPrimary>,
+  Simplify<PortfolioSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Portfolio*
+ */
+type PortfolioSliceVariation = PortfolioSliceDefault;
+
+/**
+ * Portfolio Shared Slice
+ *
+ * - **API ID**: `portfolio`
+ * - **Description**: Portfolio
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PortfolioSlice = prismic.SharedSlice<
+  "portfolio",
+  PortfolioSliceVariation
+>;
+
+/**
+ * Primary content in *Samples → Primary*
+ */
+export interface SamplesSliceDefaultPrimary {
+  /**
+   * Title field in *Samples → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: samples.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Samples → Items*
+ */
+export interface SamplesSliceDefaultItem {
+  /**
+   * Video field in *Samples → Items*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: samples.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Image field in *Samples → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: samples.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Samples → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: samples.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Samples Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SamplesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SamplesSliceDefaultPrimary>,
+  Simplify<SamplesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Samples*
+ */
+type SamplesSliceVariation = SamplesSliceDefault;
+
+/**
+ * Samples Shared Slice
+ *
+ * - **API ID**: `samples`
+ * - **Description**: Samples
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SamplesSlice = prismic.SharedSlice<
+  "samples",
+  SamplesSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -864,6 +1055,16 @@ declare module "@prismicio/client" {
       IntroductionSliceDefaultPrimary,
       IntroductionSliceVariation,
       IntroductionSliceDefault,
+      PortfolioSlice,
+      PortfolioSliceDefaultPrimary,
+      PortfolioSliceDefaultItem,
+      PortfolioSliceVariation,
+      PortfolioSliceDefault,
+      SamplesSlice,
+      SamplesSliceDefaultPrimary,
+      SamplesSliceDefaultItem,
+      SamplesSliceVariation,
+      SamplesSliceDefault,
     };
   }
 }

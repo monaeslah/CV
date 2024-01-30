@@ -20,15 +20,16 @@ const useStyles = makeStyles((theme?: any) => ({
       padding: "96px 80px",
     },
     [theme.breakpoints.down("sm")]: {
-      padding: "24px",
+      padding: "44px",
       flexDirection: "column",
       textAlign: "center",
       height: "auto",
+      width: "100%",
     },
   },
 
   introductionContents: {
-    maxWidth: "750px",
+    maxWidth: "450px",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
@@ -38,19 +39,27 @@ const useStyles = makeStyles((theme?: any) => ({
       paddingTop: "60px",
       maxWidth: "400px",
       margin: "auto",
+      textAlign: "center",
     },
   },
 
   tagline: {
     color: theme.palette.text.primary,
+    [theme.breakpoints.down("sm")]: {
+      margin: "auto !important",
+    },
   },
   introductionDescription: {
     margin: "0",
-    color: theme.palette.primary[900],
+    color: theme.palette.primary[800],
     fontSize: "20px",
     fontStyle: "normal",
     fontWeight: "400",
     lineHeight: "32px",
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+      margin: "auto !important",
+    },
   },
   introductionItem: {
     marginTop: "12px",
@@ -69,12 +78,24 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   introductionImageSection: {
+    // width: "550px",
+    height: "500px",
     [theme.breakpoints.down("sm")]: {
-      display: "flex",
+      paddingTop: "60px",
+      maxWidth: "300px",
+      height: "450px",
+
       margin: "auto",
     },
   },
-  introductionImage: { flexBasis: "0", width: "500px", height: "550px" },
+  introductionImage: {
+    flexBasis: "0",
+    width: "100%",
+    height: "100%",
+    [theme.breakpoints.down("sm")]: {
+      margin: "0 auto",
+    },
+  },
   signUp: {
     display: "flex",
     padding: "10px 24px",
