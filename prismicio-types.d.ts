@@ -884,10 +884,10 @@ export interface PortfolioSliceDefaultItem {
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: portfolio.items[].linkto
+   * - **API ID Path**: portfolio.items[].link_to
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  linkto: prismic.LinkField;
+  link_to: prismic.LinkField;
 }
 
 /**
@@ -939,16 +939,6 @@ export interface SamplesSliceDefaultPrimary {
  * Primary content in *Samples → Items*
  */
 export interface SamplesSliceDefaultItem {
-  /**
-   * Video field in *Samples → Items*
-   *
-   * - **Field Type**: Embed
-   * - **Placeholder**: *None*
-   * - **API ID Path**: samples.items[].video
-   * - **Documentation**: https://prismic.io/docs/field#embed
-   */
-  video: prismic.EmbedField;
-
   /**
    * Image field in *Samples → Items*
    *

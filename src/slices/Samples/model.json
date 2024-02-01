@@ -21,13 +21,6 @@
         }
       },
       "items": {
-        "video": {
-          "type": "Embed",
-          "config": {
-            "label": "Video",
-            "placeholder": ""
-          }
-        },
         "image": {
           "type": "Image",
           "config": {

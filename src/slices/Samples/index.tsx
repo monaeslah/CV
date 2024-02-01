@@ -18,7 +18,7 @@ const Samples = ({ slice }: SamplesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className={classes.img}>
+      <div className={classes.animation}>
         <TelescopeComponent />
       </div>
     </section>

@@ -114,7 +114,9 @@ const useStyles = makeStyles((theme?: any) => ({
       transform: "translate(10px, 10px)",
     },
   },
-  // other styles (like body) can be added her
+  animation: {
+    margin: "0 auto",
+  },
 }));
 
 export default useStyles;
