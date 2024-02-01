@@ -43,11 +43,12 @@
             "placeholder": ""
           }
         },
-        "linkto": {
+        "link_to": {
           "type": "Link",
           "config": {
             "label": "LinkTo",
             "placeholder": "",
+            "allowTargetBlank": false,
             "select": null
           }
         }

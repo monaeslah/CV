@@ -8,6 +8,7 @@ export const useStyles = makeStyles({
     height: 600,
     boxShadow: "0 4px 10px rgba(5, 4, 22, 0.3)",
     borderRadius: 4,
+    margin: "auto",
     "& *": {
       position: "absolute",
       boxSizing: "border-box",

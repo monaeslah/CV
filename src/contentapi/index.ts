@@ -38,24 +38,14 @@ export const components = {
   
     const footer = await client.getByUID("footer", 'footer');
    
-    // Log the fetched pages for debugging
- 
-  
-    /**
-     * Define a path for every Document.
-     */
+    
     return {
         props:pages.data,
         header,
         footer
     };
   }
-//   {
-//       predicates: [
-//         prismic.filter.not("my.page.uid", "home"),
-//         prismic.filter.not("my.page.uid", "header"),
-//       ],
-//     }
+
 
 export const getExtraPageContent = async (uid: string) => {
   const client = createClient({})
@@ -66,7 +56,7 @@ export const getExtraPageContent = async (uid: string) => {
     const page = await client.getByUID('extra_page', uid)
 
     return {
-      content: page.data ,
+      props: page.data ,
    
       header,
       footer

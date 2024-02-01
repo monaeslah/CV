@@ -73,8 +73,7 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
             {slice.items.map((item, index) => {
               return (
                 <div className={classes.sampleVeiw} key={index}>
-                  <PrismicNextLink field={item.linkto}>
-                    {" "}
+                  <PrismicNextLink field={item.link_to}>
                     <PrismicNextImage
                       field={item.cover}
                       alt=""
