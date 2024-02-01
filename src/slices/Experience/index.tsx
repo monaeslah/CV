@@ -74,6 +74,7 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
         >
           {slice.primary.title}
         </Typography>
+        <TitleAnime />
         <div className={classes.experiencesList}>
           {isSmallScreen ? (
             <>
@@ -178,8 +179,6 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                   </div>
                 ) : (
                   <>
-                    <TitleAnime />
-
                     <HappyMonaLisa />
                   </>
                 )}

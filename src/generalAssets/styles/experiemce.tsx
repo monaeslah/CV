@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme?: any) => ({
     minHeight: "500px",
     display: "flex",
     flexDirection: "column",
-    gap: "66px",
+    gap: "6px",
     margin: "0 auto ",
     marginBottom: "40px",
     padding: "0 76px",
