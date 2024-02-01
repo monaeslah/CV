@@ -28,11 +28,13 @@ const Header = ({ slice }: HeaderProps): JSX.Element => {
     >
       <div className={classes.headerBlock}>
         <div className={classes.title}>
-          <PrismicNextImage
-            field={slice.primary.logo}
-            className={classes.logoImg}
-            alt=""
-          />
+          <a href="/">
+            <PrismicNextImage
+              field={slice.primary.logo}
+              className={classes.logoImg}
+              alt=""
+            />
+          </a>
           {slice.primary.title}
         </div>
         <PrismicNextImage

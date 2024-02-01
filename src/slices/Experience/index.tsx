@@ -6,6 +6,7 @@ import useStyles from "../../generalAssets/styles/experiemce";
 import { Theme, Typography, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import HappyMonaLisa from "./animation";
+import TitleAnime from "./TitleAnime";
 
 /**
  * Props for `Experience`.
@@ -123,7 +124,6 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
             </>
           ) : (
             <>
-              {" "}
               <div className={classes.flipped}>
                 {slice.items.map((item, index) => (
                   <div
@@ -177,7 +177,11 @@ const Experience = ({ slice }: ExperienceProps): JSX.Element => {
                     </Typography>
                   </div>
                 ) : (
-                  <HappyMonaLisa />
+                  <>
+                    <TitleAnime />
+
+                    <HappyMonaLisa />
+                  </>
                 )}
               </div>
             </>

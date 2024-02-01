@@ -131,7 +131,7 @@ const useStyles = makeStyles((theme?: any) => ({
     flex: "1 0 50%",
     boxSizing: "border-box",
     padding: "10px",
-
+    cursor: "pointer",
     [theme.breakpoints.down("sm")]: {
       margin: "0px auto 40px auto",
       maxWidth: "330px",
@@ -241,14 +241,14 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   animateFlipTwo: { animation: `$flipEffect2 0.6s` },
   "@keyframes flipEffect2": {
-    "0%": {
-      transform: "rotateY(0deg)",
+    "100%": {
+      transform: "rotateY(00deg)",
       opacity: 1,
     },
     "50%": {
       opacity: 0.5,
     },
-    "100%": {
+    "0%": {
       transform: "rotateY(90deg)",
       opacity: 0,
     },

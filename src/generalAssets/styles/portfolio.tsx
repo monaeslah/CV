@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   sampleVeiw: {
     width: "30%",
+    cursor: "pointer",
     [theme.breakpoints.down("md")]: {
       width: "50%",
 
