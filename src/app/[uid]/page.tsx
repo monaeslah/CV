@@ -29,7 +29,7 @@ async function Page({ params }: { params: Params }) {
   const pageData = await getExtraPageContent(params.uid);
   console.log("params.uid you are being typing", params.uid);
   const prop: ExtraPageDocumentData =
-    pageData.content as unknown as Simplify<ExtraPageDocumentData>;
+    pageData.props as Simplify<ExtraPageDocumentData>;
 
   return (
     <>
