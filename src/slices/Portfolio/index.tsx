@@ -47,12 +47,14 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
       id={slice.slice_type}
     >
       <div className={classes.portfolioBlock}>
+        <Typography
+          variant={isSmallScreen ? "h5" : "h3"}
+          className={classes.title}
+        >
+          {slice.primary.title}
+        </Typography>
+
         <div className={classes.portfolioContents}>
-          <div className={classes.title}>
-            <Typography variant={isSmallScreen ? "h5" : "h3"}>
-              {slice.primary.title}
-            </Typography>
-          </div>
           {/* <div className={classes.container}>
         {slice.items.map((image, index) => (
           <div

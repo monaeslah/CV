@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme?: any) => ({
   },
   title: {
     color: theme.palette.primary[100],
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       textAlign: "center",
     },
   },
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme?: any) => ({
     color: theme.palette.primary[200],
 
     maxWidth: "900px",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       textAlign: "center",
     },
   },
@@ -63,9 +63,9 @@ const useStyles = makeStyles((theme?: any) => ({
     flexDirection: "row",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
-      [theme.breakpoints.down("sm")]: {
-        textAlign: "center",
-      },
+      margin: "0 auto",
+      textAlign: "center",
+      [theme.breakpoints.down("sm")]: {},
     },
     [theme.breakpoints.up("md")]: {
       width: "865px",
@@ -132,10 +132,13 @@ const useStyles = makeStyles((theme?: any) => ({
     boxSizing: "border-box",
     padding: "10px",
     cursor: "pointer",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("md")]: {
       margin: "0px auto 40px auto",
-      maxWidth: "330px",
+      maxWidth: "430px",
       width: "100%",
+    },
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "330px",
     },
   },
 
