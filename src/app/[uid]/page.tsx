@@ -42,7 +42,7 @@ async function Page({ params }: { params: Params }) {
           slices={[]}
           context={undefined}
         />
-        gekgeera;gk;a
+
         <SliceZone
           slices={(pageData.props as ExtraPageDocumentData).slices}
           components={components}

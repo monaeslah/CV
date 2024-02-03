@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme?: any) => ({
     marginBottom: "20px",
     [theme.breakpoints.down("md")]: {
       color: theme.palette.primary[100],
+
       marginBottom: "40px",
+
+      textAlign: "center",
     },
   },
   titleColor: {

@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme?: any) => ({
   title: {
     color: theme.palette.primary[800],
     [theme.breakpoints.down("md")]: {
-      color: theme.palette.primary[800],
+      color: theme.palette.primary[100],
     },
   },
   titleColor: {
