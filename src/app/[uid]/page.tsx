@@ -43,10 +43,7 @@ async function Page({ params }: { params: Params }) {
           context={undefined}
         />
 
-        <SliceZone
-          slices={(pageData.props as ExtraPageDocumentData).slices}
-          components={components}
-        />
+        <SliceZone slices={pageData.props?.slices} components={components} />
         <Footer
           slice={pageData.footer.data.slices[0] as FooterSlice}
           slices={[]}
