@@ -13,11 +13,13 @@ export type SamplesProps = SliceComponentProps<Content.SamplesSlice>;
  */
 const Samples = ({ slice }: SamplesProps): JSX.Element => {
   const classes = useStyles();
+  console.log("this is animation page", slice);
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
+      <p className={classes.title}>{slice.primary.title}</p>
       <div className={classes.animation}>
         <TelescopeComponent />
       </div>

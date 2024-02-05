@@ -27,7 +27,7 @@ type Params = { uid: string };
  */
 async function Page({ params }: { params: Params }) {
   const pageData = await getExtraPageContent(params.uid);
-  console.log("params.uid you are being typing", params.uid);
+  console.log("params.uid you are being typing", pageData.props?.slices);
   const prop: ExtraPageDocumentData =
     pageData.props as Simplify<ExtraPageDocumentData>;
 
@@ -42,7 +42,6 @@ async function Page({ params }: { params: Params }) {
           slices={[]}
           context={undefined}
         />
-
         <SliceZone slices={pageData.props?.slices} components={components} />
         <Footer
           slice={pageData.footer.data.slices[0] as FooterSlice}
