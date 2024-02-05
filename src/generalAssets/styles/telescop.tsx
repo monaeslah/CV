@@ -4,7 +4,7 @@ export const useStyles = makeStyles({
   container: {
     position: "relative",
     background: "#050416", // $blue_darkest
-    width: 800,
+    width: 600,
     height: 600,
     boxShadow: "0 4px 10px rgba(5, 4, 22, 0.3)",
     borderRadius: 4,

@@ -119,7 +119,7 @@ const useStyles = makeStyles((theme?: any) => ({
     },
   },
   animation: {
-    margin: "0 auto",
+    margin: "10px  auto",
   },
 }));
 
