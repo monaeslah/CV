@@ -72,7 +72,7 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
         ))}
       </div> */}
           <div className={classes.sample}>
-            {slice.items.map((item, index) => {
+            {slice.items.slice(0, -1).map((item, index) => {
               return (
                 <div className={classes.sampleVeiw} key={index}>
                   <PrismicNextLink field={item.link_to}>
@@ -90,6 +90,23 @@ const Portfolio = ({ slice }: PortfolioProps): JSX.Element => {
                 </div>
               );
             })}
+
+            {slice.items.slice(-1).map((item, index) => (
+              <div className={classes.sampleVeiw} key={index}>
+                <a href="/animation">
+                  <PrismicNextImage
+                    field={item.cover}
+                    alt=""
+                    className={classes.img}
+                    style={
+                      imageStyles[index]
+                        ? (imageStyles[index] as React.CSSProperties)
+                        : {}
+                    }
+                  />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
       </div>
