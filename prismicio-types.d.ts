@@ -514,6 +514,16 @@ export interface FooterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   message: prismic.KeyTextField;
+
+  /**
+   * CV D field in *Footer → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.primary.cv_d
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cv_d: prismic.LinkField;
 }
 
 /**

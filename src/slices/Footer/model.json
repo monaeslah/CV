@@ -46,6 +46,14 @@
             "label": "Message",
             "placeholder": ""
           }
+        },
+        "cv_d": {
+          "type": "Link",
+          "config": {
+            "label": "CV D",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {

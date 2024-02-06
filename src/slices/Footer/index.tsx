@@ -84,9 +84,14 @@ const Footer = ({ slice }: FooterProps): JSX.Element => {
         {/* </div>
         </div> */}
         <div className={classes.footerBlock}>
-          <Typography variant="subtitle2" className={classes.child}>
-            {slice.primary.email}
-          </Typography>
+          <PrismicNextLink
+            field={slice.primary.cv_d}
+            className={classes.childCV}
+          >
+            <Typography variant="subtitle2" className={classes.child}>
+              {slice.primary.email}
+            </Typography>
+          </PrismicNextLink>
           <Typography variant="subtitle2" className={classes.child}>
             {slice.primary.copy_right}
           </Typography>

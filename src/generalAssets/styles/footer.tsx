@@ -203,6 +203,11 @@ const useStyles = makeStyles((theme?: any) => ({
     color: theme.palette.text.primary,
     margin: "0",
   },
+  childCV: {
+    color: theme.palette.primary[800],
+    textDecoration: "none",
+    cursor: "pointer",
+  },
   child: {
     color: theme.palette.primary[800],
     textDecoration: "none",

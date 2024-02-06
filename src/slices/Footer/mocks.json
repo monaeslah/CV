@@ -27,6 +27,13 @@
 				"__TYPE__": "FieldContent",
 				"value": "every",
 				"type": "Text"
+			},
+			"cv_d": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
 			}
 		},
 		"items": [
